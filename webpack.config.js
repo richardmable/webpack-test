@@ -7,8 +7,11 @@ var APP = __dirname + '/app';
 module.exports = {  
     context: APP,
      entry: {
-           app: './index.js'
+           app: ['webpack/hot/dev-server', './index.js']
     },
+    plugins: [  
+    	   new webpack.HotModuleReplacementPlugin()
+    ],
     output: {
         path: APP,
         filename: 'bundle.js'
